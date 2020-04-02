@@ -76,16 +76,24 @@ fn compare_nodes<S, S2>(
 
     if first_tree.tree().key() != second_tree.tree().key() {
         display_diff(
-            format!("key={:x?}", first_tree.tree().key()),
-            format!("key={:x?}", second_tree.tree().key())
+            format!("key={:?}", first_tree.tree().key()),
+            format!("key={:?}", second_tree.tree().key())
         );
         return;
     }
 
     if first_tree.tree().value() != second_tree.tree().value() {
         display_diff(
-            format!("value={:x?}", first_tree.tree().value()),
-            format!("value={:x?}", second_tree.tree().value())
+            format!(
+                "key={:?},value={:?}",
+                first_tree.tree().key(),
+                first_tree.tree().value()
+            ),
+            format!(
+                "key={:?},value={:?}",
+                second_tree.tree().key(),
+                second_tree.tree().value()
+            )
         );
         return;
     }
