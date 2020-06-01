@@ -28,4 +28,4 @@ default-features = false
 
 [dependencies.jemallocator]
 version = "0.3.2"
-features = "disable_initial_exec_tls"
+features = ["disable_initial_exec_tls"]
